@@ -35,13 +35,13 @@ public class Main {
 			vet_testo=GestioneFile.leggiFileBinario("testo.txt");
 			System.out.println("Fine lettura file di testo.");
 			//punto 2
-			dim_originale=GestioneFile.dimensioneFile("immagineBN.bmp");//immagine originale
+			dim_originale=GestioneFile.dimensioneFile("immagine.bmp");//immagine originale
 			vet_contenitore=new int[(int)dim_originale];
-			vet_contenitore=GestioneFile.leggiFileBinario("immagineBN.bmp");//i byte del file immagine sono trasferiti nel vettore vet_contenitore
+			vet_contenitore=GestioneFile.leggiFileBinario("immagine.bmp");//i byte del file immagine sono trasferiti nel vettore vet_contenitore
 			System.out.println("Fine lettura file originale.");
 			//punto 3
 			RandomAccessFile file = null;
-			file = new RandomAccessFile("contenitoreBN.bmp", "rw");//conterrà immagine+testo
+			file = new RandomAccessFile("contenitore.bmp", "rw");//conterrà immagine+testo
 			System.out.println("File contenitore creato.");
 			//punto 4
 			vet_lunghezza=BinarioDecimale.decbin((int) dim_testo, 32);//lunghezza del testo trasformata in binario a 32 bit
@@ -76,7 +76,7 @@ public class Main {
 				file2 = new RandomAccessFile("testoSvelato.txt", "rw");
 				System.out.println("Nuovo file di testo creato.");
 				
-				vet_contenitore=GestioneFile.leggiFileBinario("contenitoreBN.bmp");
+				vet_contenitore=GestioneFile.leggiFileBinario("contenitore.bmp");
 				System.out.println("Fine lettura file contenitore.");
 				System.out.println("Sto estraendo la lunghezza del file di testo dal file contenitore...");
 				for(i=140; i<172; i++){//recupero i 32 bit della lunghezza del testo
