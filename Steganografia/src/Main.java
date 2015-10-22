@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 
 /*
+ * Steganografia: nasconde un testo in un file immagine, estrae il testo dal file contenitore
  * @author Ahmed Envar
  * @version 1.0
  * @version 1.1 corretto e commentato
